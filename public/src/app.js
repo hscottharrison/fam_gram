@@ -8,7 +8,7 @@ angular.module('famgram', ['ui.router'])
   $stateProvider
   .state('login', {
     url: '/login',
-    templateUrl: './public/src/views/login/login.html',
+    templateUrl: './src/views/login/login.html',
     controller: 'loginCtrl'
   })
 })

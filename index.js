@@ -15,11 +15,11 @@ app.use(bodyParser.json());
 app.use(session(config.session));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use('/login', express.static(__dirname + '/public'));
+app.use('/', express.static(__dirname + '/public'));
 massive(config.postgres).then(dbInstance=>{
   app.set('db', dbInstance)
 });
 
-app.listen(port, ()=>{
-  console.log('Server is listening', port);
+app.listen(port, function(){
+  console.log('Ground control to Major Tom');
 });
