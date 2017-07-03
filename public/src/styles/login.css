@@ -1,0 +1,19 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+div.login-body{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.login-wrapper{
+  width: 80%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

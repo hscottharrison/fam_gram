@@ -1,4 +1,4 @@
-angular.module('famgram', ['ui.router'])
+angular.module('famgram', ['ui.router', 'ui.materialize'])
 
 .config(($urlRouterProvider, $stateProvider) => {
 
@@ -7,8 +7,13 @@ angular.module('famgram', ['ui.router'])
   $urlRouterProvider.otherwise('/login')
   $stateProvider
   .state('login', {
-    url: '/login',
+    url: '/',
     templateUrl: './src/views/login/login.html',
     controller: 'loginCtrl'
+  })
+  .state('register', {
+    url: '/register',
+    templateUrl: './src/views/register/register.html',
+    controller: 'registerCtrl'
   })
 })
