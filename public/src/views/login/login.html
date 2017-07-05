@@ -1,22 +1,25 @@
-<div class='login-body'>
-  <div class="row login-wrapper">
-      <form action='/login' method='post' class="col s12">
-        <div class="row">
-          <div class="input-field col s12">
+<div class='login-body #bdbdbd grey lighten-1'>
+      <!-- <div class="gutter col s2 m2 l3">content</div> -->
+      <form action='/login' method='post' class="col s8 m8 l12 login-form">
+        <div class='logo'> <h2>FamGram</h2> </div>
+        <div class="row col s7 l7 input-row z-depth-3">
+          <div class="input-field col s12 l12">
             <input ng-model='user.username' id='username' type="text" class="validate">
             <label for="username">Username</label>
           </div>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
+        <div class="row col s7 l7 input-row z-depth-3">
+          <div class="input-field col s12 l12">
             <input ng-model='user.password' id="password" type="password" class="validate">
             <label for="password">Password</label>
           </div>
         </div>
-        <a ng-click='authenticate(user)' class="waves-effect waves-light btn">button</a>
-        <div class="row">
-          <h4>First time? <a ui-sref='register'>Create an account!</a></h4>
+        <div class='row col s8 l8'>
+          <a ng-click='authenticate(user)' class="#616161 grey darken-2 waves-effect waves-light btn z-depth-3">Log In</a>
+        </div>
+        <div class="row col s8 l8">
+          <h5>First time? <a ui-sref='register'>Create an account!</a></h5>
         </div>
       </form>
-    </div>
+      <!-- <div class="gutter col s2 m2 l3">content</div> -->
 </div>

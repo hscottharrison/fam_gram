@@ -1,6 +1,12 @@
-<div class="row">
-    <form class="col s12 l6">
-      <div class="row">
+<div class="register-wrapper row #bdbdbd grey lighten-1">
+    <header class='register-header col s12 l6 offset-l3'>
+      <h3 class='col s12'>Welcome!</h3>
+      <p>
+        Enter your information below! All fields are required.
+      </p>
+    </header>
+    <form class="register-form col s12 l6 offset-l3">
+      <div class="row input-row #ffffff white">
         <div class="input-field col s6">
           <input ng-model='user.first_name' id="first_name" type="text" class="validate">
           <label for="first_name">First Name</label>
@@ -10,33 +16,36 @@
           <label for="last_name">Last Name</label>
         </div>
       </div>
-      <div class="row">
+      <div class="row input-row #ffffff white">
         <div class="input-field col s12">
           <input ng-model='user.username' id="username" type="text" class="validate">
           <label for="username">Username</label>
         </div>
       </div>
-      <div class="row">
+      <div class="row input-row #ffffff white">
         <div class="input-field col s12">
           <input ng-model='user.password' id="password" type="password" class="validate">
           <label for="password">Password</label>
         </div>
       </div>
-      <div class="row">
+      <div class="row input-row #ffffff white">
         <div class="input-field col s12">
           <input ng-model='user.email' id="email" type="email" class="validate">
           <label for="email">Email</label>
         </div>
       </div>
-      <div class="row">
-        <div class="col s6">
+      <div class="row col s6 input-row #ffffff white">
+        <div class="col s12">
           <div input-field>
-            <select class="" ng-model="user.branch_name" material-select watch>
+            <select class="" ng-model="user.branch_name" id='branch' type='branch' class='validate' material-select watch>
               <option ng-repeat="branch in branches">{{branch.branch_name}}</option>
             </select>
+            <label for='branch'>Branch</label>
           </div>
         </div>
       </div>
-      <a ng-click='createUser(user)' class="waves-effect waves-light btn">button</a>
+      <div class='row col s7'>
+        <a ng-click='createUser(user)' class="#616161 grey darken-2 waves-effect waves-light btn">Submit</a>
+      </div>
     </form>
   </div>

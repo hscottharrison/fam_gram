@@ -21,4 +21,9 @@ angular.module('famgram', ['ui.router', 'ui.materialize'])
     templateUrl: './src/views/timeline/timeline.html',
     controller: 'timelineCtrl'
   })
+  .state('post', {
+    url: '/post',
+    templateUrl: './src/views/post/post.html',
+    controller: 'postCtrl'
+  })
 })

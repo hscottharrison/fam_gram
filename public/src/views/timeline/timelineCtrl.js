@@ -2,12 +2,11 @@ angular.module('famgram').controller('timelineCtrl', function($scope, timelineSe
 
   $scope.test = timelineService.test
 
-  $scope.upload(file){
+  $scope.upload(file)
     timelineService.upload(file)
     .then(function(response){
       console.log(response)
     })
-  }
 
 
 
