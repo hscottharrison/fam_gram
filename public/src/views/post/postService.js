@@ -7,4 +7,8 @@ angular.module('famgram').service('postService', function($http){
     return $http.put(signed_request, file, {headers: {'x-amz-acl': 'public-read'}})
   }
 
+  this.createPost = function(post){
+    return $http.post('/api/posts', post)
+  }
+
 })

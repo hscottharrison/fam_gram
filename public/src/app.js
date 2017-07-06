@@ -22,7 +22,7 @@ angular.module('famgram', ['ui.router', 'ui.materialize'])
     controller: 'timelineCtrl'
   })
   .state('post', {
-    url: '/post',
+    url: '/post/:id',
     templateUrl: './src/views/post/post.html',
     controller: 'postCtrl'
   })

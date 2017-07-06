@@ -1,6 +1,7 @@
 .register-wrapper{
   min-height: 100vh;
   align-items: center;
+  margin: 0px;
 }
 header.register-header{
   text-align: center;

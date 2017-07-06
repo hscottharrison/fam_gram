@@ -1,7 +1,6 @@
 <form name="myForm" ng-submit="">
+    <img class='preview-img' ng-src='{{imageUrl}}' />
     <input id='file-input' type="file"/>
-    <img ng-src='{{imageUrl}}' />
-
+    <textarea ng-model='caption'></textarea>
+    <a ng-model='post' ng-click='createPost(caption)' class="waves-effect waves-light btn">button</a>
 </form>
-
-{{test}}

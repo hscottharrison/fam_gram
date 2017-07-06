@@ -1,10 +1,14 @@
 angular.module('famgram').service('timelineService', function($http){
 
-  this.test = 'Does this work? yes!'
-
-  this.upload = function(file){
-    return $http.post('/api/create_post', file)
+  this.getPosts = function(){
+    return $http.get('/api/posts')
+    .then(function(response){
+      var timelineArr = response.data;
+      return timelineArr.reverse();
+    })
   }
+
+
 
 
 })

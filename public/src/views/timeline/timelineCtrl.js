@@ -1,12 +1,16 @@
-angular.module('famgram').controller('timelineCtrl', function($scope, timelineService){
+angular.module('famgram').controller('timelineCtrl', function($scope, $state, $stateParams, timelineService){
 
-  $scope.test = timelineService.test
+  timelineService.getPosts()
+  .then(function(response){
+    console.log(response)
+    $scope.posts = response;
+  })
 
-  $scope.upload(file)
-    timelineService.upload(file)
-    .then(function(response){
-      console.log(response)
-    })
+
+
+    $scope.goPost = function(){
+      $state.go('post', {id: $stateParams.id})
+    }
 
 
 

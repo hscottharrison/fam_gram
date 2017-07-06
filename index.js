@@ -12,10 +12,10 @@ const config = require('./server/config.js');
 const aws = require('aws-sdk');
 
 aws.config.update({
-  accessKeyId: config.accessKeyId,
-  secretAccessKey: config.secretAccesskey,
-  region: config.region,
-  signatureVersion: config.signatureVersion
+   accessKeyId: config.accessKeyId,
+   secretAccessKey: config.secretAccessKey,
+   region: config.region,
+   signatureVersion: config.signatureVersion
 })
 
 
@@ -30,6 +30,7 @@ massive(config.postgres).then(dbInstance=>{
   app.set('db', dbInstance)
 });
 masterRoutes(app);
+
 
 app.get('/api/s3', function(req, res, next) {
    const s3 = new aws.S3()

@@ -1,4 +1,8 @@
-This is the timeline page!
-{{test}}
+<div ng-repeat='post in posts'>
+  <img class='timeline-image' ng-src='{{post.post_url}}' />
+  <p>
+    {{post.caption}}
+  </p>
+</div>
 
-<button ui-sref='post'>Button</button>
+<button ng-click='goPost()'>Button</button>
