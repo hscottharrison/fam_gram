@@ -34,6 +34,17 @@ module.exports = {
       // console.log('something broke dumbass')
       res.status(500).json(err);
     })
+  },
+
+  update_likes: function(req, res, next){
+    req.app.get('db')
+    .update_likes([req.body.like_count, req.body.post_id])
+    .then(likes =>{
+      res.status(200).json(likes);
+    })
+    .catch(err =>{
+      res.status(500).json(err)
+    })
   }
 
 

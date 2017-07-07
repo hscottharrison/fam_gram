@@ -1,5 +1,6 @@
 .timeline-image{
   height: 400px;
+  width: 600px;
 }
 .logo{
   font-family: 'Pacifico', cursive;
@@ -20,12 +21,42 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+  border: 2px solid #607d8b;
+  padding-bottom: 20px;
 }
-.post-id{
-  color: #fff;
+.username{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid #bdbdbd;
+  height: 60px;
+  align-items: center;
+  padding-left: 20px;
 }
 .fixed-button{
   position: fixed;
   bottom: 5%;
   right: 5%;
+}
+.comment-input{
+  border-top: 1px solid #bdbdbd;
+  width: 95%;
+  margin-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.post-content{
+  width: 95%;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+.caption{
+  font-size: 17px;
+  font-weight: bold;
+}
+.comment-user{
+  font-weight: 600;
+}
+.comment-content{
+  font-size: 15px;
 }
