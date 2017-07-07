@@ -8,6 +8,14 @@ angular.module('famgram').service('timelineService', function($http){
     })
   }
 
+  this.addComment = function(comment){
+    return $http.post('/api/comments', comment)
+  }
+
+  this.getComment = function(){
+    return $http.get('/api/comments')
+  }
+
 
 
 

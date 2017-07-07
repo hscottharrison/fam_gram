@@ -1,3 +1,31 @@
 .timeline-image{
-  height: 200px;
+  height: 400px;
+}
+.logo{
+  font-family: 'Pacifico', cursive;
+}
+.nav-wrapper{
+  padding: 0px 60px 0px 100px;
+}
+.post-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+.post{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.post-id{
+  color: #fff;
+}
+.fixed-button{
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
 }
