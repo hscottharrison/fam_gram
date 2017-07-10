@@ -16,8 +16,8 @@
     <div class='username'>
       <h6>{{post.branch_name}}/{{post.username}}</h6>
     </div>
-    <div class='image-wrapper'>
-      <img class='timeline-image' ng-src='{{post.post_url}}' />
+    <div class='image-wrapper' style='background: url("{{post.post_url}}"); background-size: cover;'>
+      <!-- <img class='timeline-image' ng-src='{{post.post_url}}' /> -->
     </div>
     <div class='post-content'>
       <i class="small material-icons grey-text text-darken-1" ng-click='updateLikes(post.like_count, post.post_id)'>thumb_up</i><br />

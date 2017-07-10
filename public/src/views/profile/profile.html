@@ -27,7 +27,8 @@
     </div>
     <div class='profile-images'>
       <div ng-repeat='post in userPosts'>
-        <img class='profile-image' ng-src='{{post.post_url}}' />
+        <!-- <img class='profile-image' ng-src='{{post.post_url}}' /> -->
+        <div class='profile-image-wrapper' style='background: url("{{post.post_url}}") center center; background-size: cover;'></div>
       </div>
     </div>
   </div>

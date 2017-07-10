@@ -20,16 +20,25 @@
 .profile-images{
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-items: flex-start;
 }
-.profile-image{
-  display: inline;
+.profile-image-wrapper{
+  /*display: inline;
   height: 300px;
   width: 300px;
   border: 2px solid #607d8b;
   margin-bottom: 30px;
+  background-color: blue;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 300px;
+  width: 300px;
+  border: 2px solid #607d8b;
+  margin: 20px;
 }
 .profile-info{
   min-height: 250px;
