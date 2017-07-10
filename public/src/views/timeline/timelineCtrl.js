@@ -60,9 +60,11 @@ $scope.addComment = function(commentText, postId){
   })
 }
 
-$scope.goPost = function(){
-  $state.go('post', {id: $stateParams.id})
-}
+// $scope.goPost = function(){
+//   $state.go('post', {id: $stateParams.id})
+// }
+
+$scope.paramsId = $stateParams.id;
 
 $scope.updateLikes = function(like_count, post_id){
   timelineService.updateLikes(like_count, post_id)

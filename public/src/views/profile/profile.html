@@ -15,8 +15,8 @@
   <div class='profile-container'>
     <div class='profile-info' ng-repeat='use in user'>
       <div class='prof-pic'>
-        <img class='profile-pic' ng-src='{{use.profile_pic}}' /><br />
-        <a ui-sref='editprof({id: use.user_id})'><i class="small material-icons">mode_edit</i></a>
+        <img class='profile-pic' ng-src='{{use.profile_pic}}' />
+        <a tooltipped data-position='bottom' data-delay='50' data-tooltip='Edit Profile Picture' ui-sref='editprof({id: use.user_id})'><i class="small material-icons blue-grey-text">mode_edit</i></a>
       </div>
 
       <div class='profile-text'>

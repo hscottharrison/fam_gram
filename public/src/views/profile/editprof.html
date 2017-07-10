@@ -1,7 +1,13 @@
-<div class='upload-prof-pic-wrapper'>
-  <div class='upload-prof-pic'>
+<div class='upload-wrapper row valign-wrapper'>
+  <div class='exit col s12 m2 l2'>
+    <a ui-sref='profile({id: {{paramsId}}})'><i class="medium material-icons exit-icon white-text">aspect_ratio</i></a>
+  </div>
+  <div class='upload col s12 m8 l8 center-align'>
     <img class='preview-img' ng-src='{{imageUrl}}' />
       <input id='file-input' type="file"/>
-    <a ng-model='post' ng-click='updateProfile()' class="waves-effect waves-light btn">Upload</a>
+    <a ng-model='post' ng-click='updateProfile()' class="waves-effect waves-light btn blue-grey">Upload</a>
+  </div>
+  <div class='col s12 m2 l2'>
+    
   </div>
 </div>

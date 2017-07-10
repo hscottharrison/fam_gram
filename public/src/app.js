@@ -24,6 +24,7 @@ angular.module('famgram', ['ui.router', 'ui.materialize'])
   .state('post', {
     url: '/post/:id',
     templateUrl: './src/views/post/post.html',
+    parent: 'timeline',
     controller: 'postCtrl'
   })
   .state('profile', {

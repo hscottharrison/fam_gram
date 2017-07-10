@@ -1,5 +1,5 @@
 angular.module('famgram').controller('postCtrl', function($scope, $stateParams, $state, postService){
-
+  $scope.paramsId = $stateParams.id;
   var url;
   document.getElementById('file-input')
   .addEventListener('change', function(e){

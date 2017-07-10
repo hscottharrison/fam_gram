@@ -1,6 +1,18 @@
-<form name="myForm" ng-submit="">
+<!-- <form name="myForm" ng-submit="">
     <img class='preview-img' ng-src='{{imageUrl}}' />
     <input id='file-input' type="file"/>
     <textarea ng-model='caption'></textarea>
     <a ng-model='post' ng-click='createPost(caption)' class="waves-effect waves-light btn">button</a>
-</form>
+</form> -->
+<div class='upload-wrapper row valign-wrapper'>
+  <div class="col s12 m2 l2">
+    <a ui-sref='timeline({id: {{paramsId}}})'><i class="medium material-icons exit-icon white-text">aspect_ratio</i></a>
+  </div>
+  <div class='upload col s12 m8 l8'>
+    <img class='preview-img' ng-src='{{imageUrl}}' />
+    <input id='file-input' type="file"/>
+    <textarea class='post-text' placeholder='Caption' ng-model='caption'></textarea>
+    <a ng-model='post' ng-click='createPost(caption)' class="waves-effect waves-light btn">button</a>
+  </div>
+  <div class="col s12 m2 l2"></div>
+</div>

@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  min-height: calc(100vh - 65px);
+  min-height: 100vh;
 }
 .profile-images{
   width: 100%;
@@ -43,23 +43,27 @@ img.profile-pic{
   width: 150px;
   border-radius: 100%;
 }
-.upload-prof-pic-wrapper{
+.upload-wrapper{
   min-height: calc(100vh - 65px) ;
   width: 100%;
   background: rgba(0, 0, 0, .6);
   z-index: 888;
-  position:fixed;
+  position: fixed;
   left: 0;
-  display: flex;
+  /*display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
 }
-.upload-prof-pic{
-  min-height: 500px;
-  width: 60%;
+.upload{
+  height: 400px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.exit-icon{
+  position: absolute;
+  top: 0
 }
