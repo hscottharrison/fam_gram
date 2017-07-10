@@ -31,7 +31,12 @@ angular.module('famgram').service('timelineService', function($http){
 
   }
 
+  this.getBranches = function(){
+    return $http.get('/api/branches')
+  }
 
-
+  this.getUsers = function(){
+    return $http.get('/api/users')
+  }
 
 })

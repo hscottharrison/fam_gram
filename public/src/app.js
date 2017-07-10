@@ -26,4 +26,15 @@ angular.module('famgram', ['ui.router', 'ui.materialize'])
     templateUrl: './src/views/post/post.html',
     controller: 'postCtrl'
   })
+  .state('profile', {
+    url: '/profile/:id',
+    templateUrl: './src/views/profile/profile.html',
+    controller: 'timelineCtrl'
+  })
+  .state('editprof', {
+    url: '/addpic/:id',
+    templateUrl: './src/views/profile/editprof.html',
+    parent: 'profile',
+    controller: 'profCtrl'
+  })
 })

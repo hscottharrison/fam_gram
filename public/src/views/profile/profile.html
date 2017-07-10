@@ -1,0 +1,34 @@
+<div class='navbar-fixed'>
+  <nav>
+     <div class="nav-wrapper #bdbdbd grey lighten-1">
+       <a href="#" class="brand-logo logo">FamGram</a>
+       <ul id="nav-mobile" class="right hide-on-med-and-down">
+         <li><a ui-sref="profile({id: {{id}}})">Profile</a></li>
+         <li><a href="badges.html">Branch Page</a></li>
+         <li><a href="collapsible.html">Where Are We?</a></li>
+       </ul>
+     </div>
+   </nav>
+</div>
+<div class="profile-wrapper">
+  <ui-view></ui-view>
+  <div class='profile-container'>
+    <div class='profile-info' ng-repeat='use in user'>
+      <div class='prof-pic'>
+        <img class='profile-pic' ng-src='{{use.profile_pic}}' /><br />
+        <a ui-sref='editprof({id: use.user_id})'><i class="small material-icons">mode_edit</i></a>
+      </div>
+
+      <div class='profile-text'>
+        <h3>{{use.first_name}} {{use.last_name}}</h3>
+        <h5>{{use.username}}</h5>
+        <strong>Branch: </strong>{{use.branch_name}}
+      </div>
+    </div>
+    <div class='profile-images'>
+      <div ng-repeat='post in userPosts'>
+        <img class='profile-image' ng-src='{{post.post_url}}' />
+      </div>
+    </div>
+  </div>
+</div>

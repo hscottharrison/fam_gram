@@ -33,6 +33,12 @@
   align-items: center;
   padding-left: 20px;
 }
+.image-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 .fixed-button{
   position: fixed;
   bottom: 5%;
@@ -59,4 +65,11 @@
 }
 .comment-content{
   font-size: 15px;
+}
+.select-branch{
+  position: fixed;
+  top: 20%;
+  right: 5%;
+  width: 10%;
+  z-index: 999;
 }

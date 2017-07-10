@@ -1,9 +1,10 @@
 angular.module('famgram').controller('timelineCtrl', function($scope, $state, $stateParams, timelineService){
 $scope.posts;
+$scope.test = 'this is a test'
+$scope.id = $stateParams.id
 //Immediately grab all posts when page is loaded
 timelineService.getPosts()
 .then(function(response){
-  console.log(response)
   $scope.posts = response;
 })
 
@@ -75,6 +76,39 @@ $scope.updateLikes = function(like_count, post_id){
     }
   })
 }
+
+timelineService.getBranches()
+  .then(function(response){
+    $scope.branches = response.data
+})
+
+timelineService.getPosts()
+.then(function(response){
+  var userPosts = []
+  for(var i = 0; i < response.length; i++){
+    if(response[i].user_id == $stateParams.id){
+      userPosts.push(response[i]);
+    }
+  }
+  $scope.userPosts = userPosts;
+})
+
+timelineService.getUsers()
+.then(function(response){
+  var users = response.data;
+  console.log(users)
+  var user = []
+  for(var i = 0; i < users.length; i++){
+    if(!users[i].profile_pic){
+      users[i].profile_pic = 'https://www.talent2celeb.com/images/proifle_pic.png'
+    }
+    if(users[i].user_id == $stateParams.id){
+      user.push(users[i])
+    }
+  }
+  $scope.user = user
+})
+
 
 
 })
