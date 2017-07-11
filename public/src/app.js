@@ -40,12 +40,28 @@ angular.module('famgram', ['ui.router', 'ui.materialize'])
   .state('profile', {
     url: '/profile/:id',
     templateUrl: './src/views/profile/profile.html',
-    controller: 'timelineCtrl'
+    controller: 'timelineCtrl',
+    resolve:{
+      isLoggedin: function(loginService, $state, $stateParams){
+        loginService.whoLogin($stateParams).then(function(response){
+          if(!response.data.whologgedin){
+            alert("You are not logged in. Please login and try again!")
+            $state.go('login')
+          }
+        })
+      }
+    }
   })
   .state('editprof', {
     url: '/addpic/:id',
     templateUrl: './src/views/profile/editprof.html',
     parent: 'profile',
     controller: 'profCtrl'
+  })
+  .state('viewpost', {
+    url: '/viewpost/:post_id',
+    templateUrl: './src/views/profile/viewpost.html',
+    parent: 'profile',
+    controller: 'getoneCtrl'
   })
 })

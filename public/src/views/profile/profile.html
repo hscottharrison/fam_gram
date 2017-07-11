@@ -1,7 +1,7 @@
 <div class='navbar-fixed'>
   <nav>
      <div class="nav-wrapper #bdbdbd grey lighten-1">
-       <a href="#" class="brand-logo logo">FamGram</a>
+       <a ui-sref='timeline({id: {{id}}})' class="brand-logo logo">FamGram</a>
        <ul id="nav-mobile" class="right hide-on-med-and-down">
          <li><a ui-sref="profile({id: {{id}}})">Profile</a></li>
          <li><a href="badges.html">Branch Page</a></li>
@@ -28,7 +28,7 @@
     <div class='profile-images'>
       <div ng-repeat='post in userPosts'>
         <!-- <img class='profile-image' ng-src='{{post.post_url}}' /> -->
-        <div class='profile-image-wrapper' style='background: url("{{post.post_url}}") center center; background-size: cover;'></div>
+        <a ui-sref='viewpost({post_id: {{post.post_id}}})'><div class='profile-image-wrapper' style='background: url("{{post.post_url}}") center center; background-size: cover;'></div></a>
       </div>
     </div>
   </div>

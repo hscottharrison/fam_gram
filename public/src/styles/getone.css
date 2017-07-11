@@ -1,0 +1,9 @@
+.single-image{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width:50%;
+  float: left;
+
+}
