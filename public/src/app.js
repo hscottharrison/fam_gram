@@ -19,7 +19,17 @@ angular.module('famgram', ['ui.router', 'ui.materialize'])
   .state('timeline', {
     url: '/timeline/:id',
     templateUrl: './src/views/timeline/timeline.html',
-    controller: 'timelineCtrl'
+    controller: 'timelineCtrl',
+    resolve:{
+      isLoggedin: function(loginService, $state, $stateParams){
+        loginService.whoLogin($stateParams).then(function(response){
+          if(!response.data.whologgedin){
+            alert("You are not logged in. Please login and try again!")
+            $state.go('login')
+          }
+        })
+      }
+    }
   })
   .state('post', {
     url: '/post/:id',

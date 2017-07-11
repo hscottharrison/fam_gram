@@ -5,7 +5,7 @@
        <ul id="nav-mobile" class="right hide-on-med-and-down">
          <li><a ui-sref="profile({id: {{id}}})">Profile</a></li>
          <li><a href="badges.html">Branch Page</a></li>
-         <li><a href="collapsible.html">Where Are We?</a></li>
+         <li><a ng-click='logout()'>Logout</a></li>
        </ul>
      </div>
    </nav>
@@ -16,7 +16,7 @@
     <div class='username'>
       <h6>{{post.branch_name}}/{{post.username}}</h6>
     </div>
-    <div class='image-wrapper' style='background: url("{{post.post_url}}"); background-size: cover;'>
+    <div class='image-wrapper' style='background: url("{{post.post_url}}") center center; background-size: cover;'>
       <!-- <img class='timeline-image' ng-src='{{post.post_url}}' /> -->
     </div>
     <div class='post-content'>

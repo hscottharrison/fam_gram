@@ -1,4 +1,4 @@
-angular.module('famgram').controller('timelineCtrl', function($scope, $state, $stateParams, timelineService){
+angular.module('famgram').controller('timelineCtrl', function($scope, $state, $stateParams, timelineService, loginService){
 $scope.posts;
 $scope.test = 'this is a test'
 $scope.id = $stateParams.id
@@ -111,6 +111,11 @@ timelineService.getUsers()
   $scope.user = user
 })
 
-
+$scope.logout = function(){
+  loginService.logout($scope.id)
+  .then(function(response){
+    $state.go('login')
+  })
+}
 
 })
