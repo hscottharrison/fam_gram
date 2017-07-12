@@ -5,7 +5,7 @@
        <ul id="nav-mobile" class="right hide-on-med-and-down">
          <li><a ui-sref="profile({id: {{id}}})">Profile</a></li>
          <li><a href="badges.html">Branch Page</a></li>
-         <li><a href="collapsible.html">Where Are We?</a></li>
+         <li><a ng-click='logout()'>Logout</a></li>
        </ul>
      </div>
    </nav>
@@ -15,18 +15,19 @@
   <div class='profile-container'>
     <div class='profile-info' ng-repeat='use in user'>
       <div class='prof-pic'>
-        <img class='profile-pic' ng-src='{{use.profile_pic}}' />
-        <a tooltipped data-position='bottom' data-delay='50' data-tooltip='Edit Profile Picture' ui-sref='editprof({id: use.user_id})'><i class="small material-icons blue-grey-text">mode_edit</i></a>
-      </div>
-
+        <!-- <img class='profile-pic' ng-src='{{use.profile_pic}}' /> -->
+        <div class='profile-pic' style='background: url({{use.profile_pic}}) center center; background-size: cover;'>
+          <a tooltipped data-position='bottom' data-delay='50' class='edit-icon' data-tooltip='Edit Profile Picture' ui-sref='editprof({id: use.user_id})'><i class="small material-icons blue-grey-text edit-icon">mode_edit</i></a>
+        </div>
+        </div>
       <div class='profile-text'>
         <h3>{{use.first_name}} {{use.last_name}}</h3>
         <h5>{{use.username}}</h5>
-        <strong>Branch: </strong>{{use.branch_name}}
+        <h6>Branch: {{use.branch_name}}</h6>
       </div>
     </div>
-    <div class='profile-images'>
-      <div ng-repeat='post in userPosts'>
+    <div class='profile-images row'>
+      <div ng-repeat='post in userPosts' class='col l4'>
         <!-- <img class='profile-image' ng-src='{{post.post_url}}' /> -->
         <a ui-sref='viewpost({post_id: {{post.post_id}}})'><div class='profile-image-wrapper' style='background: url("{{post.post_url}}") center center; background-size: cover;'></div></a>
       </div>

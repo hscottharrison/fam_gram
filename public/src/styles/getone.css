@@ -1,9 +1,29 @@
+.single-upload{
+  background-color: white;
+  overflow: scroll;
+  /*box-sizing: border-box;*/
+}
 .single-image{
-  display:flex;
+  /*display: flex;
   justify-content: center;
-  align-items: center;
-  height: 500px;
-  width:50%;
-  float: left;
-
+  align-items: center;*/
+  height: 600px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.exit-icon{
+  margin-top: 10px;
+}
+.caption-and-comments{
+  height: 425px;
+  border-bottom: 1px solid #bdbdbd;
+}
+.single-comment-input{
+  border-top: 1px solid #bdbdbd;
+}
+.likes-and-comments{
+  height: 100px;
+}
+.single-likes{
+  padding: 10px;
 }

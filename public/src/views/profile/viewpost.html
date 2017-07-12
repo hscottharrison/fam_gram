@@ -1,5 +1,5 @@
 <div class='upload-wrapper row valign-wrapper'>
-  <div class='exit col s12 m2 l2'>
+  <div class='exit col s12 m2 l1'>
     <a ui-sref='profile({id: post.user_id})'><img class='exit-icon' src='https://cdn2.iconfinder.com/data/icons/media-and-navigation-buttons-round/512/Button_12-512.png' /></a>
   </div>
 
@@ -7,12 +7,33 @@
 
 
 
-  <div class='upload col s12 m8 l8 center-align'>
-    <div class='post'>
-      <div class='single-image' style='background: url("{{post.post_url}}") center center; background-size: cover;'>
+  <div class='single-upload col s12 m8 l10 center-align'>
+      <div class='single-image col s12 m7 l7' style='background: url("{{post.post_url}}") center center; background-size: cover;'>
         <!-- <img class='timeline-image' ng-src='{{post.post_url}}' /> -->
       </div>
-
+      <div class='single-post-content col s12 m5 l5'>
+        <div class='username'>
+          <h6><em>{{post.branch_name}}</em>/{{post.username}}</h6>
+        </div>
+        <div class='caption-and-comments left-align'>
+          <p class='caption'>
+            <h6><em>{{post.branch_name}}</em>/{{post.username}}</h6><h6>{{post.caption}}</h6>
+          </p>
+        </div>
+        <div class='likes-and-comments left-align'>
+          <div class='single-likes'>
+            <i class="small material-icons grey-text text-darken-1" ng-click='updateLikes(post.like_count, post.post_id)'>thumb_up</i><br />
+            {{post.like_count}} likes
+          </div>
+          <!-- <div ng-repeat='comment in post.comments'>
+            <span class='comment-user'> {{comment.username}} </span> <span class='comment-content'>{{comment.comment_text}}</span>
+          </div>
+        </div> -->
+        <div class='single-comment-input valign-wrapper'>
+          <input placeholder='Add Comment' type='text' ng-model='commentText' class='col s8 bottom-align'></input>
+          <a ng-click='addComment(commentText, post.post_id)' class="waves-effect waves-light btn blue-grey col s2 center-align">Add Comment</a>
+        </div>
+        </div>
     </div>
   </div>
 
@@ -21,7 +42,7 @@
 
 
 
-  <div class='col s12 m2 l2'>
+  <div class='col s12 m2 l1'>
 
   </div>
 </div>
