@@ -25,7 +25,7 @@ app.use(session(config.session));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/', express.static(__dirname + '/public'));
-massive(config.postgres).then(dbInstance=>{
+massive(process.env.DATABASE_URL || config.postgres).then(dbInstance=>{
   app.set('db', dbInstance)
 });
 masterRoutes(app);
