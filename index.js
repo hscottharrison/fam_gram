@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const port = 3001;
 const app = express();
 const massive = require('massive');
 const masterRoutes = require('./server/masterRoutes.js');
@@ -56,6 +55,6 @@ app.get('/api/s3', function(req, res, next) {
 
 
 
-app.listen(port, function(){
+app.listen(process.env.PORT || config.port, function(){
   console.log('Ground control to Major Tom');
 });
