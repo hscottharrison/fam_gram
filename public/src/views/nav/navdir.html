@@ -1,0 +1,24 @@
+<div class='navbar-fixed'>
+  <nav>
+     <div class="nav-wrapper #bdbdbd grey lighten-1">
+       <a ui-sref='timeline({id: {{id}}})' class="brand-logo logo">FamGram</a>
+       <ul id="nav-mobile" class="right hide-on-med-and-down">
+         <li><a ui-sref="profile({id: {{id}}})">Profile</a></li>
+         <li><a ui-sref="timeline({id: {{id}}})">Timeline</a></li>
+         <li><a ng-click='logout()'>Logout</a></li>
+       </ul>
+       <div class='dropdown-container'>
+       <!-- Dropdown Trigger -->
+      <a class='dropdown-button hide-on-large-only #455a64 blue-grey darken-2' href='javascript:void(0);' data-activates='demoDropdown' dropdown data-hover="true">
+        <i class="material-icons valign-wrapper">menu</i>
+      </a>
+      <!-- Dropdown Structure -->
+      <ul id='demoDropdown' class='dropdown-content'>
+          <li><a ui-sref='profile({id: {{id}}})'>Profile</a></li>
+          <li><a ui-sref='timeline({id: {{id}}})'>Timeline</a></li>
+          <li><a ng-click='logout()'>Logout</a></li>
+      </ul>
+     </div>
+     </div>
+   </nav>
+</div>
