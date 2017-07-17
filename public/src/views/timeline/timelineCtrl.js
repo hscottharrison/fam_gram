@@ -6,6 +6,7 @@ $scope.id = $stateParams.id
 timelineService.getPosts()
 .then(function(response){
   $scope.posts = response;
+  console.log(response)
 })
 
 //Immediately grab all comments when page is loaded

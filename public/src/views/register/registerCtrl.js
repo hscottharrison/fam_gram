@@ -6,6 +6,7 @@ angular.module('famgram').controller('registerCtrl', function($scope, $state, re
   })
 
   $scope.createUser = function(user){
+    user.profile_pic = 'https://www.talent2celeb.com/images/proifle_pic.png'
     registerService.createUser(user)
     .then(function(response){
       alert('Great! Your Profile has been Created!')

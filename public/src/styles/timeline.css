@@ -75,3 +75,8 @@
   width: 10%;
   z-index: 999;
 }
+.small-prof-pic{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}

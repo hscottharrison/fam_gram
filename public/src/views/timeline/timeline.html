@@ -3,6 +3,10 @@
 <div class='row post-wrapper'>
   <div class='post z-depth-3' ng-repeat='post in posts | filter:branch_selected | orderBy: "-post_id"'>
     <div class='username'>
+      <div class='small-prof-pic' style='background: url({{post.profile_pic}}) no-repeat center center; background-size: cover; margin-right: 5px;)'>
+
+      </div>
+      <!-- <img class='small-prof-pic' ng-src='{{post.profile_pic}}' /> -->
       <h6>{{post.branch_name}}/{{post.username}}</h6>
     </div>
     <div class='image-wrapper' style='background: url("{{post.post_url}}") center center; background-size: cover;'>
