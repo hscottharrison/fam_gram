@@ -1,7 +1,7 @@
 <nav-dir></nav-dir>
 <ui-view></ui-view>
 <div class='row post-wrapper'>
-  <div class='post z-depth-3' ng-repeat='post in posts | filter:branch_selected | orderBy: "-post_id"'>
+  <div class='post z-depth-3' ng-repeat='post in posts | filter:search | orderBy: "-post_id"'>
     <div class='username'>
       <div class='small-prof-pic' style='background: url({{post.profile_pic}}) no-repeat center center; background-size: cover; margin-right: 5px;)'>
 
@@ -30,10 +30,13 @@
 
     <a tooltipped data-position='top' data-delay='50' data-tooltip='Create a new post!' ui-sref='post({id: {{paramsId}}})' class="btn-floating btn-large waves-effect waves-light blue-grey fixed-button"><i class="material-icons">add</i></a>
     <!-- <div input-field class='select-branch'> -->
-      <select class='select-branch' ng-model="branch_selected" id='branch' type='branch' class='validate' material-select watch>
-        <option ng-repeat="branch in branches">{{branch.branch_name}}</option>
-      </select>
-      <label for='branch'>Search by Branch</label>
+      <div class='select-branch'>
+        <div class='go-back'ng-click='goback()'><i class="tiny material-icons">navigation</i>View All Posts</div>
+        <label for='branch'>Search by Branch</label>
+        <select placeholder='Search by Branch' ng-model="search.branch_name" id='branch' type='branch' class='validate' material-select watch>
+          <option ng-repeat="branch in branches">{{branch.branch_name}}</option>
+        </select>
+      </div>
     <!-- </div> -->
 
 

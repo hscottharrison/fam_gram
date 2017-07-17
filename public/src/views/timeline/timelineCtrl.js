@@ -2,6 +2,10 @@ angular.module('famgram').controller('timelineCtrl', function($scope, $state, $s
 $scope.posts;
 $scope.test = 'this is a test'
 $scope.id = $stateParams.id
+$scope.goback = function(){
+  console.log('hello')
+  $state.reload()
+};
 //Immediately grab all posts when page is loaded
 timelineService.getPosts()
 .then(function(response){
@@ -83,6 +87,12 @@ $scope.updateLikes = function(like_count, post_id){
 timelineService.getBranches()
   .then(function(response){
     $scope.branches = response.data
+    $scope.branch_names = []
+    var names = response.data
+    var branch_names = names.map(function(name){
+      return name.branch_name
+    })
+    $scope.branch_names = branch_names.toString().replace(',',' ');
 })
 
 timelineService.getPosts()
