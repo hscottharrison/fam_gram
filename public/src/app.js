@@ -65,9 +65,9 @@ angular.module('famgram', ['ui.router', 'ui.materialize'])
     controller: 'getoneCtrl'
   })
   .state('viewprof', {
-    url: '/viewprof/:username',
-    template: './src/views/view_profile/viewprof.html',
-    controller: 'profCtrl'
+    url: '/viewprof/:id/:username',
+    templateUrl: './src/views/view_profile/viewprof.html',
+    controller: 'viewprofCtrl'
   })
 })
 .directive('navDir', function(){

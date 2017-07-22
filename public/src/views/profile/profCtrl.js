@@ -1,4 +1,4 @@
-angular.module('famgram').controller('profCtrl', function($scope, $state, $stateParams, postService, profileService){
+angular.module('famgram').controller('profCtrl', function($scope, $state, $stateParams, postService, profileService, timelineService){
 
   var url;
   document.getElementById('file-input')
@@ -27,5 +27,10 @@ angular.module('famgram').controller('profCtrl', function($scope, $state, $state
           })
         }
      })
+  })
+
+  timelineService.getUsers()
+  .then(function(response){
+    console.log(response.data)
   })
 })

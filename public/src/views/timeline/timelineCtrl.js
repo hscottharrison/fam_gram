@@ -3,14 +3,16 @@ $scope.posts;
 $scope.test = 'this is a test'
 $scope.id = $stateParams.id
 $scope.goback = function(){
-  console.log('hello')
   $state.reload()
 };
+
+$scope.viewProf= function(username){
+  $state.go('viewprof', {id: $stateParams.id, username: username})
+}
 //Immediately grab all posts when page is loaded
 timelineService.getPosts()
 .then(function(response){
   $scope.posts = response;
-  console.log(response)
 })
 
 //Immediately grab all comments when page is loaded
@@ -37,6 +39,7 @@ timelineService.getComment()
 //the get comment function must be called to get the username of the person
 //who posted the comment.
 $scope.addComment = function(commentText, postId){
+  $scope.commentText = "";
   var comment = {
     text: commentText,
     postId: postId,
@@ -60,6 +63,7 @@ $scope.addComment = function(commentText, postId){
         }
 
       })
+
     })
 
   })
@@ -109,7 +113,8 @@ timelineService.getPosts()
 timelineService.getUsers()
 .then(function(response){
   var users = response.data;
-  console.log(users)
+  $scope.users=response.data;
+  console.log($scope.users)
   var user = []
   for(var i = 0; i < users.length; i++){
     if(!users[i].profile_pic){

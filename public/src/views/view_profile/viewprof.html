@@ -1,0 +1,23 @@
+<nav-dir></nav-dir>
+<div class="profile-wrapper">
+  <div class='profile-container'>
+    <div class='profile-info' ng-repeat='use in viewuser'>
+      <div class='prof-pic'>
+        <!-- <img class='profile-pic' ng-src='{{use.profile_pic}}' /> -->
+        <div class='profile-pic' style='background: url({{use.profile_pic}}) center center; background-size: cover;'>
+        </div>
+        </div>
+      <div class='profile-text'>
+        <h3>{{use.first_name}} {{use.last_name}}</h3>
+        <h5>{{use.username}}</h5>
+        <h6>Branch: {{use.branch_name}}</h6>
+      </div>
+    </div>
+    <div class='profile-images row'>
+      <div ng-repeat='post in viewuserPosts | orderBy: "-post_id"' class='col s12 m6 l4'>
+        <!-- <img class='profile-image' ng-src='{{post.post_url}}' /> -->
+        <a ui-sref='viewpost({post_id: {{post.post_id}}})'><div class='profile-image-wrapper' style='background: url("{{post.post_url}}") center center; background-size: cover;'></div></a>
+      </div>
+    </div>
+  </div>
+</div>
